@@ -25,16 +25,107 @@
       font-size: 24px;
       color: #ff5722;
     }
+
+      .container {
+            display: flex;
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .image {
+            flex: 1;
+            background: url('example.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+        .profile {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+        .profile-content {
+            display: none;
+            text-align: center;
+        }
+        .profile-content.active {
+            display: block;
+        }
+        .arrow {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            user-select: none;
+        }
+        .arrow#prev {
+            left: 8%;
+            transform: translate(-150%, -50%);
+        }
+        .arrow#next {
+            right: 15%;
+            transform: translate(150%, -50%);
+        }
+
     </style>
   </head>
 <body>
     <header>
       <h1>久遠 蓮の部屋</h1>
     </header>
-    <main>
-      <h2>プロフィール</h2>
-      <ul>
-        <li>name:久遠 蓮</li>
-    </main>
+  <div class="container">
+        <div class="image"></div>
+        <div class="profile">
+            <div class="arrow" id="prev">&#8592;</div>
+            <div id="profile1" class="profile-content active">
+                <h2>名前・好きなもの 1</h2>
+                <p>NAME：久遠 蓮 / KuonRen</p>。</p>
+								<p>LIKE：ゲーム</p>
+            </div>
+            <div id="profile2" class="profile-content">
+                <h2>プロフィール 2</h2>
+                <p>こちらは2ページ目の内容です。好きな食べ物や夢などを書いてみてください。</p>
+            </div>
+            <div class="arrow" id="next">&#8594;</div>
+        </div>
+    </div>
+
+    <script>
+        const profiles = document.querySelectorAll('.profile-content');
+        const prevArrow = document.getElementById('prev');
+        const nextArrow = document.getElementById('next');
+        let currentIndex = 0;
+
+        function updateProfile(index) {
+            profiles.forEach((profile, i) => {
+                profile.classList.toggle('active', i === index);
+            });
+        }
+
+        prevArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + profiles.length) % profiles.length;
+            updateProfile(currentIndex);
+        });
+
+        nextArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % profiles.length;
+            updateProfile(currentIndex);
+        });
+    </script>
+
   </body>
 </html>
