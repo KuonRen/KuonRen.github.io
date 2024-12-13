@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本のページ</title>
+    <style>
+        /* CSS: ページのスタイル */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML、CSS、JavaScript 基本構造</h1>
+    <div class="button" onclick="showMessage()">クリックしてメッセージを表示</div>
+
+    <script>
+        // JavaScript: ボタンがクリックされた時にメッセージを表示
+        function showMessage() {
+            alert("こんにちは、世界！");
+        }
+    </script>
+</body>
+</html>
