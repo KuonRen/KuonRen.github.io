@@ -26,7 +26,7 @@
         }
 
         header h1 {
-            color: #fff;
+            color: #ff7f00; /* オレンジ色 */
             font-size: 36px;
             letter-spacing: 2px;
         }
@@ -59,7 +59,7 @@
             width: 200px;
             height: 200px;
             object-fit: cover;
-            border-right: 5px solid #e0e0e0;
+            border-right: 5px solid #ff7f00; /* オレンジ色のボーダー */
         }
 
         .profile-text {
@@ -69,13 +69,23 @@
 
         .profile-text h2 {
             font-size: 28px;
-            color: #fff;
+            color: #ff7f00; /* オレンジ色 */
             margin-bottom: 10px;
         }
 
         .profile-text p {
             font-size: 18px;
             color: #ddd;
+        }
+
+        /* リンクやボタンなどにオレンジ色のアクセントを追加 */
+        a {
+            color: #ff7f00; /* オレンジ色 */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -89,6 +99,7 @@
             <div class="profile-text">
                 <h2>久遠 蓮</h2>
                 <p>ここにプロフィール内容が入ります。簡単な自己紹介や趣味、経歴などを記載してください。</p>
+                <a href="#">詳細情報</a> <!-- オレンジ色のリンク -->
             </div>
         </div>
     </section>
